@@ -1,24 +1,64 @@
-<div class="lik">
-  <h2 onclick="prikaziDetalje('henry')">Henry</h2>
-  <p id="henry-det" class="detalji">Henry ima 25 godina i dolazi iz Londona.</p>
-</div>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Likovi iz Henryja Opasnog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+    .lik h2 {
+      cursor: pointer;
+      color: blue;
+    }
+    .lik h2:hover {
+      text-decoration: underline;
+    }
+    .detalji {
+      margin-left: 20px;
+      font-style: italic;
+      color: #333;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Likovi iz serije Henry Opasni</h1>
 
-<div class="lik">
-  <h2 onclick="prikaziDetalje('charlott')">Charlott</h2>
-  <p id="charlott-det" class="detalji">Charlott ima 24 godine i dolazi iz Pariza.</p>
-</div>
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('henry')">Henry</h2>
+    <p id="henry-det" class="detalji">Henry ima 25 godina i dolazi iz Londona.</p>
+  </div>
 
-<div class="lik">
-  <h2 onclick="prikaziDetalje('jasper')">Jasper</h2>
-  <p id="jasper-det" class="detalji">Jasper ima 23 godine i dolazi iz Njujorka.</p>
-</div>
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('charlott')">Charlott</h2>
+    <p id="charlott-det" class="detalji">Charlott ima 24 godine i dolazi iz Pariza.</p>
+  </div>
 
-<div class="lik">
-  <h2 onclick="prikaziDetalje('piper')">Piper</h2>
-  <p id="piper-det" class="detalji">Piper ima 20 godina i dolazi iz Sidneja.</p>
-</div>
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('jasper')">Jasper</h2>
+    <p id="jasper-det" class="detalji">Jasper ima 23 godine i dolazi iz Njujorka.</p>
+  </div>
 
-<div class="lik">
-  <h2 onclick="prikaziDetalje('ray')">Ray (Cooper Barnes)</h2>
-  <p id="ray-det" class="detalji">Ray ima 46 godina i dolazi iz Sjedinjenih Američkih Država.</p>
-</div>
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('piper')">Piper</h2>
+    <p id="piper-det" class="detalji">Piper ima 20 godina i dolazi iz Sidneja.</p>
+  </div>
+
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('ray')">Ray (Cooper Barnes)</h2>
+    <p id="ray-det" class="detalji">Ray ima 46 godina i dolazi iz Sjedinjenih Američkih Država.</p>
+  </div>
+
+  <script>
+    function prikaziDetalje(ime) {
+      const detalji = document.querySelectorAll('.detalji');
+      detalji.forEach(el => el.style.display = 'none');
+      document.getElementById(ime + '-det').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
