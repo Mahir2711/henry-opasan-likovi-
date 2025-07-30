@@ -29,17 +29,17 @@
 
   <div class="lik">
     <h2 onclick="prikaziDetalje('charlott')">Charlott</h2>
-    <p id="charlott-det" class="detalji">Charlott ima 28 godina i dolazi iz Pariza.</p>
+    <p id="charlott-det" class="detalji">Charlott ima 24 godina i dolazi iz Pariza.</p>
   </div>
 
   <div class="lik">
     <h2 onclick="prikaziDetalje('jasper')">Jasper</h2>
-    <p id="jasper-det" class="detalji">Jasper ima 35 godina i dolazi iz Njujorka.</p>
+    <p id="jasper-det" class="detalji">Jasper ima 23 godina i dolazi iz Njujorka.</p>
   </div>
 
   <div class="lik">
     <h2 onclick="prikaziDetalje('piper')">Piper</h2>
-    <p id="piper-det" class="detalji">Piper ima 24 godine i dolazi iz Sidneja.</p>
+    <p id="piper-det" class="detalji">Piper ima 20 godine i dolazi iz Sidneja.</p>
   </div>
 
   <script>
