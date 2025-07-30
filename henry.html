@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Henry Opasni - Likovi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 40px;
+    }
+
+    .character {
+      cursor: pointer;
+      width: 200px;
+    }
+
+    .character img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+
+    .character img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      text-align: left;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Henry Opasni - Glavni likovi</h1>
+
+  <div class="gallery">
+    <div class="character" onclick="showModal('henry')">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/2f/Henry_Danger_Henry_Hart.jpg" alt="Henry Hart">
+      <p>Henry (Kid Danger)</p>
+    </div>
+    <div class="character" onclick="showModal('ray')">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Henry_Danger_Ray_Manchester.jpg" alt="Ray">
+      <p>Kapetan Men</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalText"></div>
+    </div>
+  </div>
+
+  <script>
+    const characterInfo = {
+      henry: {
+        name: "Henry Hart (Kid Danger)",
+        age: "14 godina (na početku serije)",
+        actor: "Glumi ga Jace Norman",
+        origin: "Swellview",
+        description: "Henry je tinejdžer koji postaje pomoćnik superheroja Kapetana Mena."
+      },
+      ray: {
+        name: "Ray Manchester (Captain Man)",
+        age: "Nepoznata – ne stari jer je nezapaljiv",
+        actor: "Glumi ga Cooper Barnes",
+        origin: "Swellview",
+        description: "Ray je superheroj koji je neuništiv i vodi tajni bunker."
+      }
+    };
+
+    function showModal(id) {
+      const info = characterInfo[id];
+      document.getElementById("modalText").innerHTML = `
+        <h2>${info.name}</h2>
+        <p><strong>Glumac:</strong> ${info.actor}</p>
+        <p><strong>Godine:</strong> ${info.age}</p>
+        <p><strong>Grad:</strong> ${info.origin}</p>
+        <p>${info.description}</p>
+      `;
+      document.getElementById("infoModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("infoModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
