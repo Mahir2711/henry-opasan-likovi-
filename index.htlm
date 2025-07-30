@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Likovi</title>
+  <style>
+    .lik h2 {
+      cursor: pointer;
+      color: blue;
+    }
+    .lik h2:hover {
+      text-decoration: underline;
+    }
+    .detalji {
+      margin-left: 20px;
+      font-style: italic;
+      color: #333;
+      display: none; /* Sakriveno na početku */
+    }
+  </style>
+</head>
+<body>
+  <h1>Likovi</h1>
 
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('henry')">Henry</h2>
+    <p id="henry-det" class="detalji">Henry ima 25 godina i dolazi iz Londona.</p>
+  </div>
+
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('charlott')">Charlott</h2>
+    <p id="charlott-det" class="detalji">Charlott ima 28 godina i dolazi iz Pariza.</p>
+  </div>
+
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('jasper')">Jasper</h2>
+    <p id="jasper-det" class="detalji">Jasper ima 35 godina i dolazi iz Njujorka.</p>
+  </div>
+
+  <div class="lik">
+    <h2 onclick="prikaziDetalje('piper')">Piper</h2>
+    <p id="piper-det" class="detalji">Piper ima 24 godine i dolazi iz Sidneja.</p>
+  </div>
+
+  <script>
+    function prikaziDetalje(ime) {
+      // Prvo sakrij sve detalje
+      const detalji = document.querySelectorAll('.detalji');
+      detalji.forEach(el => el.style.display = 'none');
+
+      // Prikaži detalje za lika na kojeg je kliknuto
+      document.getElementById(ime + '-det').style.display = 'block';
+    }
+  </script>
+</body>
+</html><div class="lik">
+  <h2 onclick="prikaziDetalje('ray')">Ray (Cooper Barnes)</h2>
+  <p id="ray-det" class="detalji">Ray ima 46 godina i dolazi iz Sjedinjenih Američkih Država.</p>
+</div>
